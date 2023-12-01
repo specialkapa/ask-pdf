@@ -19,6 +19,14 @@ user to interrogate a `pdf` file on the CLI and returns a response in the CLI.
 > poetry config virtualenvs.in-project = true
 ```
 
+4. You will need to use your `openai` API key. For now set it as an environment 
+   variable through your CLI. For some reason using `.env` file along with 
+   `python-dotenv` does not work. 
+
+```PowerShell
+>$end:$env:OPENAI_API_KEY="your-key-here"
+```
+
 > **Note**: All the CLi commands stated assume you are `Windows` with `PowerShell`.
 
 # Installation 
@@ -53,3 +61,9 @@ askpdf -q "Your question here"
 askpdf -h
 askpdf --help 
 ```
+
+# TODOs
+- [ ] Fix issue with `openai` API KEY not being recognised when using `python-dotenv`
+  along with a .env file. 
+- [ ] Use local large language model rather than sending requests to `openai`. 
+
